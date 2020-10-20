@@ -18,7 +18,7 @@ public class practiceForLevel12 : MonoBehaviour
     public static UnityAction<bool> LevelHadPassed = null;
     //public static UnityAction<string, string> resultOfLevel1 = null;
     //ublic static UnityAction<string, string> resultOfLevel2 = null;
-    
+
     #region publicTimers
     [Header("TIMERS")]
 
@@ -66,7 +66,7 @@ public class practiceForLevel12 : MonoBehaviour
     private bool level12HadLoaded = false;
     private bool[] hadPlay1 = new bool[8];
     private bool[] hadPlay3 = new bool[5];
-    
+
     private bool generated = false;
     private bool answered = false;
     private bool answerIsCorrect = false;
@@ -98,7 +98,7 @@ public class practiceForLevel12 : MonoBehaviour
     private int thisScene;
     private int nextSceneToLoad;
     private GameObject talkingObject;
-    
+
     private void Start()
     {
         level12HadLoaded = true;
@@ -233,7 +233,7 @@ public class practiceForLevel12 : MonoBehaviour
     {
         if (breakStarted)
             _balloonTimer -= Time.deltaTime;
-        else if(!breakStarted)
+        else if (!breakStarted)
             _balloonTimer = balloonTimer;
     }
 
@@ -298,7 +298,7 @@ public class practiceForLevel12 : MonoBehaviour
 
     private void visualPrompt()
     {
-        if(_visualPTempTimer_f <= 0 && !startPrompts && !answered)
+        if (_visualPTempTimer_f <= 0 && !startPrompts && !answered)
         {
             switch (visualPromptCounter)
             {
@@ -316,7 +316,7 @@ public class practiceForLevel12 : MonoBehaviour
                     {
                         GenItems.targetAnimator.SetBool("isWalking", true);
                     }
-                    
+
                     _visualPTempTimer_f = visualPromptTimer2_f;
                     startPrompts = true;
                     break;
@@ -341,9 +341,9 @@ public class practiceForLevel12 : MonoBehaviour
         else if (!startTrail)
             OVRInput.SetControllerVibration(0, 0, GenItems.controllerMask);
 
-        if(_visualPTempTimer_d <= 0 && startPrompts && !answered)
+        if (_visualPTempTimer_d <= 0 && startPrompts && !answered)
         {
-            if(visualPromptCounter <= 1)
+            if (visualPromptCounter <= 1)
             {
                 if (GenItems.ringParticleInScene1 != null)
                     GenItems.ringParticleInScene1.Stop();
@@ -367,18 +367,18 @@ public class practiceForLevel12 : MonoBehaviour
             }
             else if (visualPromptCounter == 2)
             {
-                if(roundCount < 5 && !hadPlay3[0])
+                if (roundCount < 5 && !hadPlay3[0])
                 {
                     playVoice.playVoice_3(0);
                     hadPlay3[0] = true;
                 }
-                if(roundCount == 5 && !hadPlay3[3])
+                if (roundCount == 5 && !hadPlay3[3])
                 {
                     // don't worry! Let's take a break!
                     talkingObject.SetActive(true);
                     playVoice.playVoice_3(3);
                     hadPlay3[3] = true;
-                    cleanSession();      
+                    cleanSession();
                 }
 
                 if (hadPlay3[0] || hadPlay3[3])
@@ -402,14 +402,14 @@ public class practiceForLevel12 : MonoBehaviour
 
     private void AnswerIsRight()
     {
-        if(!triggeringEffects.triggeringSound.isPlaying && !PlayVoice.voiceAudioSource.isPlaying)
+        if (!triggeringEffects.triggeringSound.isPlaying && !PlayVoice.voiceAudioSource.isPlaying)
         {
             if (!hadPlay1[2])
             {
                 // good job!
                 playVoice.playVoice_1(2);
                 CalculateScores();
-                hadPlay1[2] = true;   
+                hadPlay1[2] = true;
             }
         }
 
@@ -441,7 +441,7 @@ public class practiceForLevel12 : MonoBehaviour
                     // greate! Let's take a break!
                     talkingObject.SetActive(true);
                     playVoice.playVoice_3(2);
-                    hadPlay3[2] = true; 
+                    hadPlay3[2] = true;
                     cleanSession();
                 }
             }
@@ -485,7 +485,7 @@ public class practiceForLevel12 : MonoBehaviour
             cleanField();
         else if (hadPlay1[7] && !PlayVoice.voiceAudioSource.isPlaying)
             cleanField();
-        
+
     }
 
     private void CalculateScores()
@@ -540,7 +540,7 @@ public class practiceForLevel12 : MonoBehaviour
 
         if (hadPlay3[2] || hadPlay3[3] || hadPlay1[5])
         {
-            breakStarted = true;        
+            breakStarted = true;
         }
 
         if (hadPlay1[7] || hadPlay1[6])
@@ -627,16 +627,17 @@ public class practiceForLevel12 : MonoBehaviour
 
         sessionIsTesting = true;
         transmitScores = false;
-        sessionHadStarted_2 = false;   
+        sessionHadStarted_2 = false;
     }
 
     private void getScores()
     {
-        if(thisScene == 1)
+        if (thisScene == 1)
         {
             scoreOfLevel1_1 = "5/" + testingScores1.ToString();
             scoreOfLevel1_2 = "5/" + testingScores2.ToString();
-        } else if (thisScene == 2)
+        }
+        else if (thisScene == 2)
         {
             scoreOfLevel2_1 = "5/" + testingScores1.ToString();
             scoreOfLevel2_2 = "5/" + testingScores2.ToString();
