@@ -239,11 +239,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: talkingObject
       objectReference: {fileID: 0}
-    - target: {fileID: 716995407755901923, guid: 480111ac239dfb2499d8726bceb8f96a,
-        type: 3}
-      propertyPath: m_TagString
-      value: talkingObject
-      objectReference: {fileID: 0}
     - target: {fileID: 718902114568131949, guid: 480111ac239dfb2499d8726bceb8f96a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -299,17 +294,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4990126929037180192, guid: 480111ac239dfb2499d8726bceb8f96a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4990126929037180193, guid: 480111ac239dfb2499d8726bceb8f96a,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 47d061cef076ab5418d87da64e9d7725,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 480111ac239dfb2499d8726bceb8f96a, type: 3}
 --- !u!4 &506261519 stripped
@@ -1778,6 +1762,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: PracticeForLevel12
       objectReference: {fileID: 0}
+    - target: {fileID: 7303100260738841254, guid: 87e224ffe2b858c43b960cf182cf29ee,
+        type: 3}
+      propertyPath: voiceClips_1.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: a4d09b8b2f8ce1c45893798e4677d479, type: 3}
+    - target: {fileID: 7303100260738841254, guid: 87e224ffe2b858c43b960cf182cf29ee,
+        type: 3}
+      propertyPath: voiceClips_1.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0553af0795c6d2d49b60b8b3d54fae8e, type: 3}
+    - target: {fileID: 7303100260738841254, guid: 87e224ffe2b858c43b960cf182cf29ee,
+        type: 3}
+      propertyPath: voiceClips_1.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 07567c2dd83ec504d9225f4f8ae7f8ea, type: 3}
+    - target: {fileID: 7303100260738841254, guid: 87e224ffe2b858c43b960cf182cf29ee,
+        type: 3}
+      propertyPath: voiceClips_1.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: 40fc808d014feb84580c71804ebc84b3, type: 3}
+    - target: {fileID: 7303100260738841254, guid: 87e224ffe2b858c43b960cf182cf29ee,
+        type: 3}
+      propertyPath: voiceClips_1.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: a21747d1e0cb83640a02fff76b48f9a8, type: 3}
+    - target: {fileID: 7303100260738841254, guid: 87e224ffe2b858c43b960cf182cf29ee,
+        type: 3}
+      propertyPath: voiceClips_1.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 54c50123ebc36b54497ca62ba294cf16, type: 3}
+    - target: {fileID: 7303100260738841254, guid: 87e224ffe2b858c43b960cf182cf29ee,
+        type: 3}
+      propertyPath: voiceClips_1.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: b9fdda7d07909bd4980920c2b6ff6999, type: 3}
+    - target: {fileID: 7303100260738841254, guid: 87e224ffe2b858c43b960cf182cf29ee,
+        type: 3}
+      propertyPath: voiceClips_1.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: fa5134f1d74c61b4e89a53efacc436f9, type: 3}
     - target: {fileID: 7303100260738841275, guid: 87e224ffe2b858c43b960cf182cf29ee,
         type: 3}
       propertyPath: target_p.Array.data[0]

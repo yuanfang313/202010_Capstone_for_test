@@ -45,6 +45,8 @@ public class toggleCanvas : MonoBehaviour
             tooltip[1].SetActive(false);
             tooltip[2].SetActive(false);
             tooltip[3].SetActive(false);
+            tooltip[4].SetActive(false);
+            tooltip[5].SetActive(false);
         }
     }
 

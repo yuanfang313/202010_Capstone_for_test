@@ -11,8 +11,7 @@ public class practiceForLevel12 : MonoBehaviour
     public GenItems genItems;
     public PrintStatus printStatus;
 
-    public static string scoreOfLevel1_1, scoreOfLevel1_2;
-    public static string scoreOfLevel2_1, scoreOfLevel2_2;
+    public static string [,] scoreOfLevel1;
 
     public static UnityAction<bool> Level12HadLoaded = null;
     public static UnityAction<bool> LevelHadPassed = null;
@@ -632,15 +631,33 @@ public class practiceForLevel12 : MonoBehaviour
 
     private void getScores()
     {
-        if (thisScene == 1)
+        switch(thisScene)
         {
-            scoreOfLevel1_1 = "5/" + testingScores1.ToString();
-            scoreOfLevel1_2 = "5/" + testingScores2.ToString();
+            case 1:
+                getScore(scoreOfLevel1[0, 0], scoreOfLevel1[0, 1]);
+                break;
+            case 2:
+                getScore(scoreOfLevel1[1, 0], scoreOfLevel1[1, 1]);
+                break;
+            case 3:
+                getScore(scoreOfLevel1[2, 0], scoreOfLevel1[2, 1]);
+                break;
+            case 4:
+                getScore(scoreOfLevel1[3, 0], scoreOfLevel1[3, 1]);
+                break;
+            case 5:
+                getScore(scoreOfLevel1[4, 0], scoreOfLevel1[4, 1]);
+                break;
+            case 6:
+                getScore(scoreOfLevel1[5, 0], scoreOfLevel1[5, 1]);
+                break;
+            default:
+                break;
         }
-        else if (thisScene == 2)
+        void getScore (string scoreOfLevel_0, string scoreOfLevel_1)
         {
-            scoreOfLevel2_1 = "5/" + testingScores1.ToString();
-            scoreOfLevel2_2 = "5/" + testingScores2.ToString();
+            scoreOfLevel_0 = "5/" + testingScores1.ToString();
+            scoreOfLevel_1 = "5/" + testingScores2.ToString();
         }
     }
 
