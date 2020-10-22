@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 7072966375664640782}
   - component: {fileID: 3298056742940676426}
   m_Layer: 8
-  m_Name: "3-4_\u5927\u8C61_r"
+  m_Name: "4-3_\u5927\u8C61_r"
   m_TagString: rightAnswer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

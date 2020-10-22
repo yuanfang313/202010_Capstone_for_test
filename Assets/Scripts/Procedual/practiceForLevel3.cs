@@ -114,17 +114,9 @@ public class practiceForLevel3 : MonoBehaviour
 
         talkingObject = GameObject.FindGameObjectWithTag("talkingObject");
 
-        if (thisScene == 3)
-        {
-            level3HadLoaded = true;
-            level4HadLoaded = false;
-        }   
-        else if (thisScene == 4)
-        {
-            level3HadLoaded = true;
-            level4HadLoaded = false;
-        }
-            
+        level3HadLoaded = true;
+        level4HadLoaded = false;
+                
         if (Level34HadLoaded != null)
             Level34HadLoaded(level3HadLoaded, level4HadLoaded);
 
@@ -229,11 +221,7 @@ public class practiceForLevel3 : MonoBehaviour
         {
             if (roundHadFinished && !generated)
             {
-                if (thisScene == 3)
-                    genItems.GenerateTargetsForLevel3();
-                else if (thisScene == 4)
-                    genItems.GenerateTargetsForLevel4();
-
+                genItems.GenerateTargetsForLevel3();
                 generated = true;
                 roundHadFinished = false;
             }
@@ -768,9 +756,8 @@ public class practiceForLevel3 : MonoBehaviour
     {
         if (hadPlay3[4] && !PlayVoice.voiceAudioSource.isPlaying)
         {
-            if (thisScene == 3)
-                SceneManager.LoadScene(nextSceneToLoad);
-            else if (thisScene == 4)
+          SceneManager.LoadScene(nextSceneToLoad);
+          if (thisScene + 1 == SceneManager.sceneCountInBuildSettings)
                 SceneManager.LoadScene("MainMenu");
         }
     }

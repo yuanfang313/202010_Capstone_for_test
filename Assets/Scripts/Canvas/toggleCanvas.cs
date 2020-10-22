@@ -60,13 +60,13 @@ public class toggleCanvas : MonoBehaviour
         centerEyePosition = centerEyeTransform.position;
 
         float y = centerEyePosition.y - 0.9f;
-        if(y >= 0.4f)
+        if(y >= 0.5f)
         {
-            canvasPositionAnchor = new Vector3(centerEyePosition.x, y, centerEyePosition.z + 1.5f);
+            canvasPositionAnchor = new Vector3(centerEyePosition.x, y, centerEyePosition.z + 2.0f);
         }
-        else if (y < 0.4f)
+        else if (y < 0.5f)
         {
-            canvasPositionAnchor = new Vector3(centerEyePosition.x, 0.4f, centerEyePosition.z + 1.5f);
+            canvasPositionAnchor = new Vector3(centerEyePosition.x, 0.5f, centerEyePosition.z + 2.0f);
         }
         
         return canvasPositionAnchor;
