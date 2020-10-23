@@ -243,14 +243,16 @@ public class practiceForTutorial : MonoBehaviour
                 case 2:
                     GenItems.ringParticleInScene1.Play();
                     GenItems.ringParticleInScene2.Play();
-                    GenItems.deerAnimator.SetBool("isWalking", true);
+                    if(GenItems.deerAnimator != null)
+                        GenItems.deerAnimator.SetBool("isWalking", true);
                     _visualPTempTimer_f = visualPromptTimer2_f;
                     startPrompts = true;
                     break;
                 case 3:
                     GenItems.ringParticleInScene1.Play();
                     GenItems.ringParticleInScene2.Play();
-                    GenItems.deerAnimator.SetBool("isWalking", true);
+                    if (GenItems.deerAnimator != null)
+                        GenItems.deerAnimator.SetBool("isWalking", true);
                     _visualPTempTimer_f = visualPromptTimer2_f;
                     startPrompts = true;
                     startTrail = true;
@@ -258,7 +260,8 @@ public class practiceForTutorial : MonoBehaviour
                 default:
                     GenItems.ringParticleInScene1.Play();
                     GenItems.ringParticleInScene2.Play();
-                    GenItems.deerAnimator.SetBool("isWalking", true);
+                    if (GenItems.deerAnimator != null)
+                        GenItems.deerAnimator.SetBool("isWalking", true);
                     _visualPTempTimer_f = visualPromptTimer2_f;
                     startPrompts = true;
                     startTrail = true;
@@ -405,7 +408,7 @@ public class practiceForTutorial : MonoBehaviour
     {
         if (hadPlay3[2] && !PlayVoice.voiceAudioSource.isPlaying)
         {
-            SceneManager.LoadScene("Level_1-1");
+            SceneManager.LoadScene("Level_01_1-6");
         }
     }
 }

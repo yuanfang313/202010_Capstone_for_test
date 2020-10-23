@@ -1627,12 +1627,12 @@ PrefabInstance:
         type: 3}
       propertyPath: raisingBalloonTransformAnchor
       value: 
-      objectReference: {fileID: 97482508}
+      objectReference: {fileID: 97482509}
     - target: {fileID: 7303100260738841275, guid: 87e224ffe2b858c43b960cf182cf29ee,
         type: 3}
       propertyPath: fallingBalloonTransformAnchor
       value: 
-      objectReference: {fileID: 97482509}
+      objectReference: {fileID: 97482508}
     - target: {fileID: 7303100260738841275, guid: 87e224ffe2b858c43b960cf182cf29ee,
         type: 3}
       propertyPath: prefabTargets.Array.data[0]

@@ -765,7 +765,7 @@ public class practiceForLevel3 : MonoBehaviour
         if (hadPlay3[4] && !PlayVoice.voiceAudioSource.isPlaying)
         {
           SceneManager.LoadScene(nextSceneToLoad);
-          if (thisScene + 1 == SceneManager.sceneCountInBuildSettings)
+          if (thisScene + 2 == SceneManager.sceneCountInBuildSettings)
                 SceneManager.LoadScene("MainMenu");
         }
     }

@@ -1096,7 +1096,7 @@ PrefabInstance:
     - target: {fileID: 718902114568131949, guid: 480111ac239dfb2499d8726bceb8f96a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.24
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 718902114568131949, guid: 480111ac239dfb2499d8726bceb8f96a,
         type: 3}
@@ -1984,7 +1984,7 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceClips_1.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 896e2b7e03d09654eb73127830789dc0, type: 3}
+      objectReference: {fileID: 8300000, guid: f9a61682a25c4804aa950422df35a021, type: 3}
     - target: {fileID: 4404745818395016909, guid: 1605c78b39ca5494195e6f3a618af842,
         type: 3}
       propertyPath: voiceClips_1.Array.data[1]
