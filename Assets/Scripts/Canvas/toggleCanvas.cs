@@ -12,7 +12,7 @@ public class toggleCanvas : MonoBehaviour
     private Vector3 canvasPositionAnchor;
     
     private bool buttonIsPressed = false;
-    private bool canvasHadOpened = false;
+    public bool canvasHadOpened = false;
 
     private void Awake()
     {

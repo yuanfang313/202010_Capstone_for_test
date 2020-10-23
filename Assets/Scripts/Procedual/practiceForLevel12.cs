@@ -11,8 +11,6 @@ public class practiceForLevel12 : MonoBehaviour
     public GenItems genItems;
     public PrintStatus printStatus;
 
-    public static string [,] scoreOfLevel1;
-
     public static UnityAction<bool> Level12HadLoaded = null;
     public static UnityAction<bool> LevelHadPassed = null;
     //public static UnityAction<string, string> resultOfLevel1 = null;
@@ -634,30 +632,31 @@ public class practiceForLevel12 : MonoBehaviour
         switch(thisScene)
         {
             case 1:
-                getScore(scoreOfLevel1[0, 0], scoreOfLevel1[0, 1]);
+                getScore("scoreOfLevel1-1_0", "scoreOfLevel1-1_1");
                 break;
             case 2:
-                getScore(scoreOfLevel1[1, 0], scoreOfLevel1[1, 1]);
+                getScore("scoreOfLevel1-2_0", "scoreOfLevel1-2_1");
                 break;
             case 3:
-                getScore(scoreOfLevel1[2, 0], scoreOfLevel1[2, 1]);
+                getScore("scoreOfLevel1-3_0", "scoreOfLevel1-3_1");
                 break;
             case 4:
-                getScore(scoreOfLevel1[3, 0], scoreOfLevel1[3, 1]);
+                getScore("scoreOfLevel1-4_0", "scoreOfLevel1-4_1");
                 break;
             case 5:
-                getScore(scoreOfLevel1[4, 0], scoreOfLevel1[4, 1]);
+                getScore("scoreOfLevel1-5_0", "scoreOfLevel1-5_1");
                 break;
             case 6:
-                getScore(scoreOfLevel1[5, 0], scoreOfLevel1[5, 1]);
+                getScore("scoreOfLevel1-6_0", "scoreOfLevel1-6_1");
                 break;
             default:
                 break;
         }
         void getScore (string scoreOfLevel_0, string scoreOfLevel_1)
         {
-            scoreOfLevel_0 = "5/" + testingScores1.ToString();
-            scoreOfLevel_1 = "5/" + testingScores2.ToString();
+            PlayerPrefs.SetString(scoreOfLevel_0, "5/" + testingScores1.ToString());
+            PlayerPrefs.SetString(scoreOfLevel_1, "5/" + testingScores2.ToString());
+            PlayerPrefs.SetInt("thisScene", thisScene);    
         }
     }
 

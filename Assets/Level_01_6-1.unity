@@ -1373,11 +1373,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[newNav-Canvas]'
       objectReference: {fileID: 0}
-    - target: {fileID: 120865480763238910, guid: 7ba0b12762a719847a89c68872cc11b3,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ba0b12762a719847a89c68872cc11b3, type: 3}
 --- !u!1001 &2494130088063455402

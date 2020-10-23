@@ -10,9 +10,6 @@ public class practiceForLevel3 : MonoBehaviour
     public GenItems genItems;
     public PrintStatus printStatus;
 
-    public static string scoreOfLevel3_1, scoreOfLevel3_2;
-    public static string scoreOfLevel4_1, scoreOfLevel4_2;
-
     public static UnityAction<bool, bool> Level34HadLoaded = null;
     public static UnityAction<bool> LevelHadPassed = null;
     public static UnityAction<bool, bool> answerIs = null;
@@ -713,14 +710,25 @@ public class practiceForLevel3 : MonoBehaviour
 
     private void getScores()
     {
-        if (thisScene == 3)
+        switch (thisScene)
         {
-            scoreOfLevel3_1 = "5/" + testingScores1.ToString();
-            scoreOfLevel3_2 = "5/" + testingScores2.ToString();
-        } else if (thisScene == 4)
+            case 7: 
+             getScore("scoreOfLevel2-1_0", "scoreOfLevel2-1_1");
+                break;
+            case 8:
+                getScore("scoreOfLevel2-2_0", "scoreOfLevel2-2_1");
+                break;
+            case 9:
+                getScore("scoreOfLevel2-3_0", "scoreOfLevel2-3_1");
+                break;
+            default:
+                break;
+        }
+        void getScore(string scoreOfLevel_0, string scoreOfLevel_1)
         {
-            scoreOfLevel4_1 = "5/" + testingScores1.ToString();
-            scoreOfLevel4_2 = "5/" + testingScores2.ToString();
+            PlayerPrefs.SetString(scoreOfLevel_0, "5/" + testingScores1.ToString());
+            PlayerPrefs.SetString(scoreOfLevel_1, "5/" + testingScores2.ToString());
+            PlayerPrefs.SetInt("thisScene", thisScene);
         }
     }
 

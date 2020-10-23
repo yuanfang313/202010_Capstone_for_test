@@ -5,12 +5,9 @@ using UnityEngine.UI;
 
 public class PrintResults : MonoBehaviour
 {
-    public Text[] ScoreOfLevel1_1;
-    public Text[] ScoreOfLevel1_2;
-    public Text[] ScoreOfLevel1_3;
-    public Text[] ScoreOfLevel1_4;
-    public Text[] ScoreOfLevel1_5;
-    public Text[] ScoreOfLevel1_6;
+    public toggleCanvas canvas;
+    public Text[] ScoreOfLevel1;
+    public Text[] ScoreOfLevel2;
 
     private string zero = "5/0";
     private bool resetBtnPressed = false;
@@ -21,20 +18,7 @@ public class PrintResults : MonoBehaviour
     }
     private void Start()
     {
-
-        ScoreOfLevel1_1[0].text = zero;
-        ScoreOfLevel1_2[0].text = zero;
-        ScoreOfLevel1_3[0].text = zero;
-        ScoreOfLevel1_4[0].text = zero;
-        ScoreOfLevel1_5[0].text = zero;
-        ScoreOfLevel1_6[0].text = zero;
-
-        ScoreOfLevel1_1[1].text = zero;
-        ScoreOfLevel1_2[1].text = zero;
-        ScoreOfLevel1_3[1].text = zero;
-        ScoreOfLevel1_4[1].text = zero;
-        ScoreOfLevel1_5[1].text = zero;
-        ScoreOfLevel1_6[1].text = zero;
+        PrintScores();
     }
 
     private void OnDestroy()
@@ -49,46 +33,80 @@ public class PrintResults : MonoBehaviour
 
     private void Update()
     {
-        PrintScores();
-        if (resetBtnPressed)
+        if (canvas.canvasHadOpened)
         {
-            for (int i = 0; i < 6; i++)
+            if (resetBtnPressed)
             {
-                practiceForLevel12.scoreOfLevel1[i, 0] = zero;
-                practiceForLevel12.scoreOfLevel1[i, 1] = zero;
+                PlayerPrefs.DeleteAll();
             }
-        }  
+            cleanScores();
+        }
+        PrintScores();
     }
-
     private void PrintScores()
     {
-        if (practiceForLevel12.scoreOfLevel1[0, 0] != null)
-            ScoreOfLevel1_1[0].text = practiceForLevel12.scoreOfLevel1[0, 0];
-        else
-            ScoreOfLevel1_1[0].text = zero;
+        if (!PlayerPrefs.HasKey("thisScene"))
+        {
+            return;
+        }
 
-        if (practiceForLevel12.scoreOfLevel1[0, 1] != null)
-            ScoreOfLevel1_1[1].text = practiceForLevel12.scoreOfLevel1[0, 1];
-        else
-            ScoreOfLevel1_1[1].text = zero;
+        int thisScene = PlayerPrefs.GetInt("thisScene");
+        if(thisScene <= 6)
+        {
+            GetScores(ScoreOfLevel1, "scoreOfLevel1-");
+        }
+        else if(thisScene > 6)
+        {
+            GetScores(ScoreOfLevel2, "scoreOfLevel2-");
+        }
+                
+        void GetScores(Text[] ScoreOfLevel, string scoreOfLevel)
+        {
+            int scene = thisScene;
+            if (thisScene > 6)
+            {
+                scene = thisScene - 6;
+            }
 
+            string levelName_0 = scoreOfLevel + scene.ToString() + "_0";
+            string levelName_1 = scoreOfLevel + scene.ToString() + "_1";
+
+            string score_0 = PlayerPrefs.GetString(levelName_0);
+            string score_1 = PlayerPrefs.GetString(levelName_1);
+
+            ScoreOfLevel[scene * 2 - 2].text = score_0;
+            ScoreOfLevel[scene * 2 - 1].text = score_1;       
+        }
     }
 
-
-    private void StoreScores(int i)
+    private void cleanScores()
     {
-        if (practiceForLevel12.scoreOfLevel1[i, 0] != null)
-            ScoreOfLevel1_1[0].text = practiceForLevel12.scoreOfLevel1[i, 0];
-        else
-            ScoreOfLevel1_1[0].text = zero;
+        clean(ScoreOfLevel1, 0);
+        clean(ScoreOfLevel1, 1);
+        clean(ScoreOfLevel1, 2);
+        clean(ScoreOfLevel1, 3);
+        clean(ScoreOfLevel1, 4);
+        clean(ScoreOfLevel1, 5);
+        clean(ScoreOfLevel1, 6);
+        clean(ScoreOfLevel1, 7);
+        clean(ScoreOfLevel1, 8);
+        clean(ScoreOfLevel1, 9);
+        clean(ScoreOfLevel1, 10);
+        clean(ScoreOfLevel1, 11);
 
-        if (practiceForLevel12.scoreOfLevel1[i, 1] != null)
-            ScoreOfLevel1_1[1].text = practiceForLevel12.scoreOfLevel1[i, 1];
-        else
-            ScoreOfLevel1_1[1].text = zero;
-    }
+        clean(ScoreOfLevel2, 0);
+        clean(ScoreOfLevel2, 1);
+        clean(ScoreOfLevel2, 2);
+        clean(ScoreOfLevel2, 3);
+        clean(ScoreOfLevel2, 4);
+        clean(ScoreOfLevel2, 5);
+
+        void clean( Text[] scoreOfLevel, int i )
+        {
+            if (scoreOfLevel[i].text == "" || resetBtnPressed)
+            {
+                scoreOfLevel[i].text = zero;
+            }
+        }
+    }      
 }
-      
-
-     
-
