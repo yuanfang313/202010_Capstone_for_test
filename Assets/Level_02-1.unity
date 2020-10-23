@@ -1984,7 +1984,7 @@ PrefabInstance:
         type: 3}
       propertyPath: voiceClips_1.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: d517ef85915ad944a9d9c86ebdd65ed8, type: 3}
+      objectReference: {fileID: 8300000, guid: 4d70ecd7907afcb45a5aec94d7abba71, type: 3}
     - target: {fileID: 4404745818395016909, guid: 1605c78b39ca5494195e6f3a618af842,
         type: 3}
       propertyPath: voiceClips_1.Array.data[1]

@@ -11,14 +11,14 @@ public class PrintResults : MonoBehaviour
 
     private string zero = "5/0";
     private bool resetBtnPressed = false;
-
+    
     private void Awake()
     {
         triggeringEffects.resetBtnHadHited += UpdateResetedBtn;
     }
     private void Start()
     {
-        PrintScores();
+        cleanScores();
     }
 
     private void OnDestroy()
@@ -39,18 +39,19 @@ public class PrintResults : MonoBehaviour
             {
                 PlayerPrefs.DeleteAll();
             }
-            cleanScores();
+         cleanScores();
         }
         PrintScores();
     }
     private void PrintScores()
     {
+        int thisScene = PlayerPrefs.GetInt("thisScene");
+
         if (!PlayerPrefs.HasKey("thisScene"))
         {
             return;
         }
 
-        int thisScene = PlayerPrefs.GetInt("thisScene");
         if(thisScene <= 6)
         {
             GetScores(ScoreOfLevel1, "scoreOfLevel1-");
@@ -76,7 +77,7 @@ public class PrintResults : MonoBehaviour
 
             ScoreOfLevel[scene * 2 - 2].text = score_0;
             ScoreOfLevel[scene * 2 - 1].text = score_1;       
-        }
+        }                          
     }
 
     private void cleanScores()
@@ -103,9 +104,38 @@ public class PrintResults : MonoBehaviour
 
         void clean( Text[] scoreOfLevel, int i )
         {
-            if (scoreOfLevel[i].text == "" || resetBtnPressed)
+            if (!resetBtnPressed)
+            {
+                if (scoreOfLevel == ScoreOfLevel1)
+                {
+                    keepScores(ScoreOfLevel1, "scoreOfLevel1-");
+                }
+                else if (scoreOfLevel == ScoreOfLevel2)
+                {
+                    keepScores(ScoreOfLevel2, "scoreOfLevel2-");
+                }
+            } else
             {
                 scoreOfLevel[i].text = zero;
+            }
+
+            void keepScores(Text[] scoreOflevel, string levelStr)
+            {
+                string index = "_0";
+                if (i % 2 != 0)
+                {
+                    index = "_1";
+                }
+                else
+                {
+                    index = "_0";
+                }
+                string levelName = levelStr + (Mathf.Floor(i / 2) + 1).ToString() + index;
+                if (PlayerPrefs.HasKey(levelName))
+                    scoreOflevel[i].text = PlayerPrefs.GetString(levelName);
+                else
+                    scoreOfLevel[i].text = zero;
+
             }
         }
     }      
